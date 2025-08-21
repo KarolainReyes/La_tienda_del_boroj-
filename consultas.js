@@ -20,7 +20,7 @@
 
     //Encontrar productos que tengan al menos los tags `"natural"` y `"orgánico"` (usa `$all`).
 
-    db.productos.find({tags: {$all: ['natural', 'organico']}})
+    db.productos.find({tags: {$all: ['natural', 'orgánico']}})
 
     //Listar productos que tienen **más de un tag** (`$size`).
 
