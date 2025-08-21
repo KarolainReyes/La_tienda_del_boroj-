@@ -36,3 +36,25 @@ db.productos.updateOne(
     {nombre:"Borojo deshidratado"},
     {stock:{stock:10}}
 );
+
+//Añadir el tag "bajo azúcar" a todos los productos de la categoría "Bebida".
+
+db.productos.updateOne(
+    {categoria: "Bebida"},
+    {$addToSet:{tags: "bajo azucar"}}
+);
+
+
+//Eliminacion
+
+//Eliminar el cliente que tenga el correo "juan@email.com".
+
+db.clientes.deleteOne({email:"juan@gmail.com"});
+
+//Eliminar todos los productos con stock menor a 5 (considera esto como un proceso de limpieza de inventario).
+
+db.productos.deleteMany({stock:{$lt:5}});
+
+
+
+
