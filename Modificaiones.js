@@ -11,7 +11,7 @@ db.productos.insertOne({
 });
 
 //insercion de un nuevo cliente 
-db.cliente.insertOne({
+db.clientes.insertOne({
     nombre: "Mario Mendoza",
     correo: "mario@gmail.com",
     compras:[],
@@ -33,15 +33,15 @@ db.clientes.find({compras:{$size:0}})
 //Actualizacion
 //Aumentar en 10 unidades el stock del producto "Borojó deshidratado".
 db.productos.updateOne(
-    {nombre:"Borojo deshidratado"},
-    {stock:{stock:10}}
+    {nombre:"Borojó deshidratado"},
+    {$inc:{stock:10}}
 );
 
 //Añadir el tag "bajo azúcar" a todos los productos de la categoría "Bebida".
 
-db.productos.updateOne(
+db.productos.updateMany(
     {categoria: "Bebida"},
-    {$addToSet:{tags: "bajo azucar"}}
+    {$push:{tags: "bajo azucar"}}
 );
 
 
