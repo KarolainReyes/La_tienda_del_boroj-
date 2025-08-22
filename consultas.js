@@ -26,3 +26,4 @@
 
     db.productos.find({tags:{$size: 2}})
 
+
