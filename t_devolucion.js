@@ -1,17 +1,17 @@
-//Transacciones
+//Transaccion
 
-//1. Simular una venta:
-    
+//3.Hacer una operación de devolución
+
 const session = db.getMongo().startSession();
 const dbSession = session.getDatabase("tienda_borojo");
 session.startTransaction();
 
 try {
-  dbSession.productos.updateOne({ _id: 1 }, { $inc: { stock: -1 } });
-  dbSession.ventas.insertOne({clienteId:3,productos:[{productoId:1,cantidad:1}], fecha: new Date(),total:5000 });
+  dbSession.productos.updateOne({ _id: 10 }, { $inc: { stock: 1 } });
+  dbSession.ventas.deleteOne({_id:9});
 
   session.commitTransaction();
-  print("Venta registrada correctamente");
+  print("Producto devuelto exitosamente");
 } catch (e) {
   session.abortTransaction();
   print("Error:", e);
@@ -19,6 +19,3 @@ try {
   session.endSession();
 }
 print("Fin del script")
-
-    
-    
