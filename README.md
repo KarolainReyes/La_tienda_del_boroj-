@@ -32,7 +32,7 @@ Los archivos `.json` incluyen los datos de:
 | `tienda_borojo.clientes.json`     | `clientes`         |
 | `tienda_borojo.proveedores.json`  | `proveedores`      |
 | `tienda_borojo.ventas.json`       | `ventas`           |
-| `tienda_borojo.ventas.json`   | `inventario`       |
+| `tienda_borojo.inventario.json`   | `inventario`       |
 
 
 Para importar las colecciones, ejecuta los siguientes comandos en tu consola (asegurate de estar en la carpeta con los archivos `.json`):  
